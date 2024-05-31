@@ -61,14 +61,14 @@ export function App() {
       </head>
       <body>
         <div className="fixed left-0 top-0 -z-10 h-screen min-h-screen w-screen bg-[url('/bg.jpeg')] bg-cover bg-fixed bg-center blur-md" />
-        <main className="flex flex-col items-center justify-start gap-8 pb-96 text-red-950 lg:gap-16 lg:py-16 dark:text-zinc-50">
+        <main className="flex flex-col items-center justify-start gap-8 p-2 pb-96 text-zinc-950 lg:gap-16 lg:py-16 dark:text-zinc-50">
           <header className="glass dark:dark-glass flex flex-col gap-4 rounded-xl px-8 py-8 text-left lg:px-16 lg:text-center">
             <h1 className="text-5xl font-bold">Pantie Packer</h1>
             <h2 className="text-3xl">
               Pack your panties using the power of <del>AI</del>{" "}
               <strong>mathematics</strong>.
             </h2>
-            <p className="max-w-xl self-center lg:pt-4">
+            <p className="max-w-xl self-center lg:py-4">
               In a world of AI charlatans and overhyped jargon, we use the power
               of traditional, tried & tested formulas to ensure you can pack for
               your trip away with confidence.
