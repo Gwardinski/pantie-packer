@@ -60,7 +60,7 @@ export function App() {
         <Links />
       </head>
       <body>
-        <div className="fixed left-0 top-0 -z-10 h-screen min-h-screen w-screen bg-[url('app/_assets/bg.jpeg')] bg-cover bg-fixed bg-center blur-md" />
+        <div className="fixed left-0 top-0 -z-10 h-screen min-h-screen w-screen bg-[url('/bg.jpeg')] bg-cover bg-fixed bg-center blur-md" />
         <main className="flex flex-col items-center justify-start gap-8 pb-96 text-red-950 lg:gap-16 lg:py-16 dark:text-zinc-50">
           <header className="glass dark:dark-glass flex flex-col gap-4 rounded-xl px-8 py-8 text-left lg:px-16 lg:text-center">
             <h1 className="text-5xl font-bold">Pantie Packer</h1>
