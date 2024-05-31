@@ -161,7 +161,7 @@ export default function Index() {
             ) : (
               <p>
                 This provides a fresh pair of panties for each day, plus some
-                piece-of-mind extras. {ibs && <i>Just in case...</i>}
+                peace-of-mind extras. {ibs && <i>Just in case...</i>}
               </p>
             )}
 
