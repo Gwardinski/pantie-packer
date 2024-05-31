@@ -86,11 +86,11 @@ export default function Index() {
   const hasPanties = Boolean(panties);
 
   return (
-    <section className="flex w-full flex-col items-center gap-4 px-4">
+    <>
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle>Pantie Calculator</CardTitle>
-          <CardDescription>How many days will you be away?</CardDescription>
+          <CardDescription>How many panties do you need...</CardDescription>
         </CardHeader>
 
         <Form method="post" onSubmit={form.handleSubmit}>
@@ -102,7 +102,7 @@ export default function Index() {
                   name="daysAway"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Days Away</FormLabel>
+                      <FormLabel>Days / Nights Away</FormLabel>
                       <FormControl>
                         <Input type="number" placeholder="7" {...field} />
                       </FormControl>
@@ -114,7 +114,7 @@ export default function Index() {
                   control={form.control}
                   name="ibs"
                   render={({ field }) => (
-                    <FormItem className="flex items-start gap-2">
+                    <FormItem className="flex-row items-start gap-2">
                       <FormControl>
                         <Checkbox
                           checked={field.value}
@@ -123,9 +123,9 @@ export default function Index() {
                       </FormControl>
 
                       <FormLabel className="pl-1 font-normal">
-                        Do you have issues with your bowel (ibs)? Are prone to
-                        accidents, have had an accident before, or some
-                        near-misses.
+                        Do you have issues with your bowels (IBS)? Are you prone
+                        to accidents, have had an accident before, or some
+                        close-calls?
                       </FormLabel>
                     </FormItem>
                   )}
@@ -142,11 +142,11 @@ export default function Index() {
         </Form>
       </Card>
 
-      {hasPanties && (
-        <Card className="w-full max-w-md">
-          <CardHeader>
-            <CardTitle>Results</CardTitle>
-          </CardHeader>
+      <Card className="min-h-[400px] w-full max-w-md">
+        <CardHeader>
+          <CardTitle>Results</CardTitle>
+        </CardHeader>
+        {hasPanties && (
           <CardContent className="flex flex-col gap-2">
             <p>
               Based on you being away for {daysAway} days, you should pack{" "}
@@ -169,9 +169,9 @@ export default function Index() {
               <p>You may also want to pack wet wipes and hand sanitiser.</p>
             )}
           </CardContent>
-        </Card>
-      )}
-    </section>
+        )}
+      </Card>
+    </>
   );
 }
 

@@ -7,8 +7,7 @@
     "config": "tailwind.config.ts",
     "css": "app/tailwind.css",
     "baseColor": "zinc",
-    "cssVariables": false,
-    "prefix": ""
+    "cssVariables": false
   },
   "aliases": {
     "components": "app/components",

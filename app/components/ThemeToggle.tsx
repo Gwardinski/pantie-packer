@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 
 export const ThemeToggle: React.FC = () => {
   const [theme, setTheme] = useTheme();
+
   const isDark = theme === Theme.DARK;
 
   return (
