@@ -122,7 +122,7 @@ export default function Index() {
                         />
                       </FormControl>
 
-                      <FormLabel className="pl-1 font-normal">
+                      <FormLabel className="pl-1 text-sm font-normal">
                         Do you have issues with your bowels (IBS)? Are you prone
                         to accidents, have had an accident before, or some
                         close-calls?
