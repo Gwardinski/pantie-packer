@@ -65,7 +65,7 @@ function App() {
     <>
       <Card className="w-full max-w-md">
         <CardHeader>
-          <CardTitle>Pantie Calculator</CardTitle>
+          <CardTitle>Panty Calculator</CardTitle>
           <CardDescription>How many panties do you need...</CardDescription>
         </CardHeader>
 
