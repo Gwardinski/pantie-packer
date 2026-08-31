@@ -11,7 +11,7 @@ export const Route = createRootRoute({
       <main className="flex h-full w-full max-w-[1600px] flex-col gap-16 lg:flex-row lg:gap-0">
         <header className="flex w-full flex-col justify-center gap-4 glass px-2 pt-16 pb-12 text-center lg:w-2/5 lg:gap-8 lg:px-8 lg:px-16 lg:pt-0 lg:pb-40 dark:dark-glass">
           <h1 className="font-serif text-4xl font-bold tracking-wide lg:text-5xl">
-            Pantie Packer
+            PantiePacker
           </h1>
           <h2 className="font-serif text-2xl tracking-wide lg:pt-2">
             Pack your panties using the power of <del>AI</del>{" "}
