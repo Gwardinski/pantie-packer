@@ -26,9 +26,16 @@ export const Route = createFileRoute("/")({
 });
 
 const formSchema = z.object({
-  daysAway: z.number().refine((val) => val >= 0, {
-    message: "Time traveller huh?",
-  }),
+  daysAway: z
+    .string()
+    .min(1, { message: "How many days are you away for?" })
+    .transform(Number)
+    .pipe(
+      z
+        .number()
+        .int({ message: "Whole days only please" })
+        .min(1, { message: "Time travelling unsupported" }),
+    ),
   ibs: z.boolean(),
 });
 
@@ -39,7 +46,7 @@ function App() {
 
   const form = useForm({
     defaultValues: {
-      daysAway: 0,
+      daysAway: "",
       ibs: false,
     },
     validators: {
@@ -86,12 +93,13 @@ function App() {
                         name={field.name}
                         value={field.state.value}
                         onBlur={field.handleBlur}
-                        onChange={(e) =>
-                          field.handleChange(Number(e.target.value))
-                        }
+                        onChange={(e) => field.handleChange(e.target.value)}
                         aria-invalid={isInvalid}
                         placeholder="4"
                         type="number"
+                        inputMode="numeric"
+                        min={1}
+                        step={1}
                         autoComplete="off"
                       />
                       {isInvalid && (
@@ -199,8 +207,9 @@ type Result = {
   hitMax: boolean;
 };
 
-const submitForm = (data: z.infer<typeof formSchema>): Result => {
-  const { daysAway, ibs } = data;
+const submitForm = (data: z.input<typeof formSchema>): Result => {
+  const { ibs } = data;
+  const daysAway = Number(data.daysAway);
 
   const hitMax = daysAway >= MAX_DAYS;
   const panties = hitMax ? 20 : calculateThePanties(daysAway, ibs);
