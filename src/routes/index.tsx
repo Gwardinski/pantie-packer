@@ -1,24 +1,22 @@
 import {
   Button,
   Card,
-  CardContent,
+  CardBody,
   CardDescription,
   CardHeader,
   CardTitle,
   Checkbox,
-  Input,
-} from "@/components/ui";
-import { createFileRoute } from "@tanstack/react-router";
-import { useForm } from "@tanstack/react-form";
-import * as z from "zod";
-import {
   Field,
   FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
   FieldSet,
-} from "@/components/ui/field";
+  Input,
+} from "@/components/gmac.ui";
+import { createFileRoute } from "@tanstack/react-router";
+import { useForm } from "@tanstack/react-form";
+import * as z from "zod";
 import { useState } from "react";
 
 export const Route = createFileRoute("/")({
@@ -63,7 +61,7 @@ function App() {
 
   return (
     <>
-      <Card className="w-full max-w-md">
+      <Card variant="glass" className="w-full max-w-md">
         <CardHeader>
           <CardTitle>Panty Calculator</CardTitle>
           <CardDescription>How many panties do you need...</CardDescription>
@@ -76,7 +74,7 @@ function App() {
             form.handleSubmit();
           }}
         >
-          <CardContent>
+          <CardBody>
             <FieldGroup>
               <form.Field
                 name="daysAway"
@@ -93,6 +91,7 @@ function App() {
                         name={field.name}
                         value={field.state.value}
                         onBlur={field.handleBlur}
+                        variant="glass"
                         onChange={(e) => field.handleChange(e.target.value)}
                         aria-invalid={isInvalid}
                         placeholder="4"
@@ -154,19 +153,19 @@ function App() {
               />
             </FieldGroup>
 
-            <Button type="submit" variant="invert" className="mt-8 w-full">
+            <Button type="submit" className="mt-8 w-full">
               Calculate Panties
             </Button>
-          </CardContent>
+          </CardBody>
         </form>
       </Card>
 
-      <Card className="min-h-[400px] w-full max-w-md">
+      <Card variant="glass" className="min-h-100 w-full max-w-md">
         <CardHeader>
           <CardTitle>Results</CardTitle>
         </CardHeader>
         {hasPanties && (
-          <CardContent className="flex flex-col gap-2">
+          <CardBody className="flex flex-col gap-2">
             <p>
               Based on you being away for {daysAway} days, you should pack{" "}
               <strong>{panties}</strong> pairs of panties.
@@ -193,7 +192,7 @@ function App() {
             {ibs && (
               <p>You may also want to pack wet wipes and hand sanitiser.</p>
             )}
-          </CardContent>
+          </CardBody>
         )}
       </Card>
     </>

@@ -5,7 +5,7 @@ import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 
 export const Route = createRootRoute({
   component: () => (
-    <div className="flex h-screen w-screen items-center justify-center text-zinc-950 dark:text-zinc-50">
+    <div className="flex h-screen w-screen items-center justify-center text-gray-950 dark:text-gray-50">
       <AppBackground />
 
       <main className="flex h-full w-full max-w-[1600px] flex-col gap-16 lg:flex-row lg:gap-0">
